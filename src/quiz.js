@@ -21,9 +21,10 @@ class Quiz {
   }
 
   checkAnswer(answer) {
-    if (this.questions[this.currentQuestionIndex].answer === answer) {
+    if (this.getQuestion().answer === answer) {
       this.correctAnswers += 1;
     }
+    console.log("the answer", answer);
   }
 
   hasEnded() {
