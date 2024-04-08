@@ -24,6 +24,7 @@ class Quiz {
     if (this.getQuestion().answer === answer) {
       this.correctAnswers += 1;
     }
+    console.log("the answer", answer);
   }
 
   hasEnded() {

@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < question.choices.length; i++) {
       const choiceEl = document.createElement("li");
       choiceContainer.appendChild(choiceEl);
-      choiceEl.innerHTML = `<input type="radio" name="choice" value=${question.choices[i]}>
+      choiceEl.innerHTML = `<input type="radio" name="choice" value="${question.choices[i]}">
        <label>${question.choices[i]}</label>`;
     }
     console.log(choiceContainer);
@@ -169,9 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
     choices.forEach((choice) => {
       if (choice.checked) {
         selectedAnswer = choice.value;
+        console.log("selected answer", selectedAnswer);
       }
     });
-    console.log(selectedAnswer);
+
     // console.log(choices.value);
 
     // 3. If an answer is selected (`selectedAnswer`), check if it is correct and move to the next question
@@ -183,7 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
       quiz.moveToNextQuestion();
       showQuestion();
     }
-    console.log(quiz.correctAnswers);
   }
 
   function showResults() {
